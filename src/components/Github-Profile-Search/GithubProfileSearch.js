@@ -4,6 +4,7 @@ import client_id  from './Githubcredential';
 import client_secret from './Githubcredential';
 import GithubProfileInfo from './Profile/GithubProfileInfo';
 import GithubProfileCard from './Profile/GithubProfileCard';
+import GithubRepos from './Repos/GithubRepos';
 
 class GithubProfileSearch extends Component {
     constructor(props) {
@@ -98,6 +99,17 @@ class GithubProfileSearch extends Component {
                                                 <React.Fragment>
                                                     <GithubProfileInfo githubProfile={this.state.githubProfile}></GithubProfileInfo>
                                                 </React.Fragment>
+                                                :null
+                                            }
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col">
+                                            {
+                                                this.state.githubRepos.length > 0 ? 
+                                                    <React.Fragment>
+                                                        <GithubRepos githubRepos={this.state.githubRepos}></GithubRepos>
+                                                    </React.Fragment>
                                                 :null
                                             }
                                         </div>

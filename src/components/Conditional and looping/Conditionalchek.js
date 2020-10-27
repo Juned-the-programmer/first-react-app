@@ -61,7 +61,7 @@ class ConditionalCheck extends Component {
                                         </div>
                                         <div className="col-md-9">
                                             {
-                                                this.state.coding ?
+                                                this.state.eating ?
                                                 <React.Fragment>
                                                     <div className="card mt-3">
                                                         <div className="card-body bg-dark text-white text-center">

@@ -15,7 +15,7 @@ class LifeCycle extends Component {
             })
         }, 1000);
     }
-
+    
     componentWillUnmount(){
         clearInterval(this.timer)
     }

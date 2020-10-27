@@ -28,6 +28,7 @@ class ContactList extends Component {
     senddata = (user) => {
         this.props.senddata(user)
     }
+    
     render() { 
         return ( 
             <React.Fragment>
