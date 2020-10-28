@@ -19,7 +19,7 @@ class ContactHead extends Component {
     render() { 
         return (  
             <React.Fragment>
-                <pre>{JSON.stringify(this.state.UserData)}</pre>
+                {/* <pre>{JSON.stringify(this.state.UserData)}</pre> */}
                 <div className="container mt-3">
                     <div className="row">
                         <p className="h4">Contact App</p>

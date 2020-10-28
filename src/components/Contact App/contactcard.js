@@ -13,7 +13,7 @@ class ContactCard extends Component {
                         <React.Fragment>
                             <div className="card sticky-top">
                                 <div className="card-header bg-primary text-white">
-                                    <div className="p-4">
+                                    <div className="p-5">
                                         
                                     </div>
                                 </div>

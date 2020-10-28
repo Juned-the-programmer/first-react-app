@@ -1,10 +1,9 @@
 import React from 'react';
+import {BrowserRouter as Router , Route , Switch} from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Landingpage from './components/Landingpage';
 import Card from './components/Card';
-import Contact from './components/Contact';
-import Cardprops from './components/Pops and state/pops/Cardprops';
 import ProfileCard from './components/Pops and state/state/profilecard';
 import EventCard from './components/Event Binding/eventcard'
 import ProductItem from './components/Event Binding/productitem';
@@ -15,50 +14,67 @@ import Looping from './components/Conditional and looping/Looping';
 import ConditionalCheck from './components/Conditional and looping/Conditionalchek';
 import Parentcomponent from './components/Component Interaction/Basic /Parentcomponent';
 import ParentComponentI from './components/Component Interaction/Intermediate/ParentComponent';
-import ParentComponentA from './components/Component Interaction/Advaced/Server';
-import ChildComponentA from './components/Component Interaction/Advaced/Client';
-import ComponentA from './components/Component Interaction/Props Drilling/ComponentA';
-import UserContext from './components/Component Interaction/Context-Api/UserContext';
-import ComponentOne from './components/Component Interaction/Context-Api/ComponentOne';
 import LifeCycle from './components/Life-cycle-of-component/LifeCycle';
 import HttpCall from './components/Http Call axios/HttpCall';
 import ContactHead from './components/Contact App/contacthead';
 import GithubProfileSearch from './components/Github-Profile-Search/GithubProfileSearch';
+import Cardcomponent from './components/Cardcomponent';
+import HomeCA from './components/Component Interaction/Advaced/Home';
+import ContextAPI from './components/Component Interaction/Context-Api/context-Api';
+import PropsDrilling from './components/Component Interaction/Props Drilling/Props-Dilling';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      clientMesssage : '',
-      serverMessage : '',
-      UserInfo : {
-        Name : 'Juned',
-        Email : 'davdajuned7698@gmail.com',
-        Username : 'Junee',
-        Age : 20
-      }
+      // clientMesssage : '',
+      // serverMessage : '',
+      // UserInfo : {
+      //   Name : 'Juned',
+      //   Email : 'davdajuned7698@gmail.com',
+      //   Username : 'Junee',
+      //   Age : 20
+      // }
     }
   }
 
-  servermessage = (data) => {
-    this.setState({
-      ...this.state,
-      serverMessage : data
-    })
-  }
+  // servermessage = (data) => {
+  //   this.setState({
+  //     ...this.state,
+  //     serverMessage : data
+  //   })
+  // }
 
-  clientmessage = (data) => {
-    this.setState({
-      ...this.state,
-      clientMesssage : data
-    })
-  }
+  // clientmessage = (data) => {
+  //   this.setState({
+  //     ...this.state,
+  //     clientMesssage : data
+  //   })
+  // }
 
   render() { 
     return (
       <React.Fragment>
-        <Navbar></Navbar>
-        <Landingpage></Landingpage>
+        <Router>
+          <Navbar></Navbar>
+          <Switch>
+            <Route exact path="/" component={Landingpage , Card}></Route>
+            <Route exact path="/pops-and-state" component={Cardcomponent , ProfileCard}></Route>
+            <Route exact path="/conditional-looping" component={Conditional , ConditionalCheck , Looping}></Route>
+            <Route exact path="/Event-binding" component={EventCard , FormEvent , ProductItem , FormEventBind}></Route>
+            <Route exact path="/Component-Interaction-Advanced" component={HomeCA}></Route>
+            <Route exact path="/Component-Interaction-Basic" component={Parentcomponent}></Route>
+            <Route exact path="/Component-Interaction-Intermediate" component={ParentComponentI}></Route>
+            <Route exact path="/Component-Interaction-Context-API" component={ContextAPI}></Route>
+            <Route exact path="/Component-Interaction-Props-Drillling" component={PropsDrilling}></Route>
+            <Route exact path="/Contact-App" component={ContactHead}></Route>
+            <Route exact path="/Http-call-axios" component={HttpCall}></Route>
+            <Route exact path="/Life-Cycle-of-component" component={LifeCycle}></Route>
+            <Route exact path="/Github-Profile-Search" component={GithubProfileSearch}></Route>
+          </Switch>
+        </Router>
+
+        {/* <Landingpage></Landingpage>
         <Card></Card>
         <Contact></Contact>
         <Cardprops></Cardprops>
@@ -112,7 +128,7 @@ class App extends React.Component {
         <LifeCycle></LifeCycle>
         <HttpCall></HttpCall>
         <ContactHead></ContactHead>
-        <GithubProfileSearch></GithubProfileSearch>
+        <GithubProfileSearch></GithubProfileSearch> */}
       </React.Fragment>
     );
   }

@@ -63,7 +63,7 @@ class GithubProfileSearch extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <div className="container">
+                <div className="container mt-5">
                     <div className="row">
                         <div className="col">
                             <div className="card">
