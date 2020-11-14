@@ -1,0 +1,3 @@
+npm install popper.js --save
+
+To load every bootstrap Javascript file in the React App

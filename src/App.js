@@ -18,7 +18,6 @@ import LifeCycle from './components/Life-cycle-of-component/LifeCycle';
 import HttpCall from './components/Http Call axios/HttpCall';
 import ContactHead from './components/Contact App/contacthead';
 import GithubProfileSearch from './components/Github-Profile-Search/GithubProfileSearch';
-import Cardcomponent from './components/Cardcomponent';
 import HomeCA from './components/Component Interaction/Advaced/Home';
 import ContextAPI from './components/Component Interaction/Context-Api/context-Api';
 import PropsDrilling from './components/Component Interaction/Props Drilling/Props-Dilling';
@@ -58,19 +57,32 @@ class App extends React.Component {
         <Router>
           <Navbar></Navbar>
           <Switch>
-            <Route exact path="/" component={Landingpage , Card}></Route>
-            <Route exact path="/pops-and-state" component={Cardcomponent , ProfileCard}></Route>
-            <Route exact path="/conditional-looping" component={Conditional , ConditionalCheck , Looping}></Route>
-            <Route exact path="/Event-binding" component={EventCard , FormEvent , ProductItem , FormEventBind}></Route>
-            <Route exact path="/Component-Interaction-Advanced" component={HomeCA}></Route>
-            <Route exact path="/Component-Interaction-Basic" component={Parentcomponent}></Route>
-            <Route exact path="/Component-Interaction-Intermediate" component={ParentComponentI}></Route>
-            <Route exact path="/Component-Interaction-Context-API" component={ContextAPI}></Route>
-            <Route exact path="/Component-Interaction-Props-Drillling" component={PropsDrilling}></Route>
-            <Route exact path="/Contact-App" component={ContactHead}></Route>
+            <Route exact path="/" component={Landingpage}></Route>
+            
+            <Route exact path="/pops" component={Card}></Route>
+            <Route exact path="/state" component={ProfileCard}></Route>
+
+            <Route exact path="/condition" component={Conditional}></Route>
+            <Route exact path="/conditioncheck" component={ConditionalCheck}></Route>
+            <Route exact path="/Loop" component={Looping}></Route>
+
+            <Route exact path="/Eventcard" component={EventCard}></Route>
+            <Route exact path="/Formevent" component={FormEvent}></Route>
+            <Route exact path="/Productitem" component={ProductItem}></Route>
+            <Route exact path="/Formeventbind" component={FormEventBind}></Route>
+
+            <Route exact path="/Basic" component={Parentcomponent}></Route>
+            <Route exact path="/InterMediate" component={ParentComponentI}></Route>
+            <Route exact path="/Advanced" component={HomeCA}></Route>
+            <Route exact path="/Context-API" component={ContextAPI}></Route>
+            <Route exact path="/Props-Drillling" component={PropsDrilling}></Route>
+
             <Route exact path="/Http-call-axios" component={HttpCall}></Route>
             <Route exact path="/Life-Cycle-of-component" component={LifeCycle}></Route>
+
             <Route exact path="/Github-Profile-Search" component={GithubProfileSearch}></Route>
+            <Route exact path="/Contact-App" component={ContactHead}></Route>
+            
           </Switch>
         </Router>
 
